@@ -1,28 +1,23 @@
 import { useState } from 'react';
 
 export const useFetch = (url, onReceived) => {
+    const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
 
-    const [isLoading, setIsLoading] = useState(false);
-
-    const getJson = () => {
+    const getJson = async () => {
         setError(false);
         setIsLoading(true);
 
-        const fetchData = async () => {
+        try {
             const response = await fetch(url);
             if (!response.ok) {
                 setError(true);
             }
             const data = await response.json();
             onReceived(data);
-            setIsLoading(false);
-        };
-
-        try {
-            fetchData();
         } catch (error) {
             setError(true);
+        } finally {
             setIsLoading(false);
         }
     };
