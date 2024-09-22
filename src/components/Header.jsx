@@ -1,24 +1,24 @@
-import React from 'react';
+// Header.jsx
 import logo from '../assets/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 
-// React Header Component
 const Header = () => {
     const navigate = useNavigate();
     return (
-        <header>
+        <header className="header">
             <Link to={'/'}>
                 <img src={logo} alt="logo" />
             </Link>
-            <p
-                onClick={(e) => {
+            <p>Discover Movies on FOmovie</p>
+            <p>
+                <span onClick={(e) => {
                     e.preventDefault();
                     navigate('/favorites');
-                }}
-            >
-                Favorites
+                }}>
+                    Favorites
+                </span>
+                <Link to={'/'}>HomePage</Link>
             </p>
-            <p>...Discover Movies on NouFilms...</p>
         </header>
     );
 };

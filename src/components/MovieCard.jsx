@@ -1,13 +1,16 @@
-import React, { useContext, useState } from 'react';
-import defaultImage from '../assets/default-card-image.png';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-//import FavoriteContext, {
-FavoriteContextProvider,
-} from '../context/FavoritesContext';
+import FavoriteContext from '../context/FavoritesContext';
+import heartEmpty from '../assets/heart-regular.svg';
+import heartSolid from '../assets/heart-solid.svg';
 
-// React MovieCard Component
 const MovieCard = ({ movie }) => {
     const { Poster, Title, imdbID } = movie;
+
+    if (Poster === 'N/A') {
+        return null;
+    }
+
     const navigate = useNavigate();
     const { isFavorite, toggleFavorite } = useContext(FavoriteContext);
     const isFav = isFavorite(imdbID);
@@ -15,38 +18,24 @@ const MovieCard = ({ movie }) => {
     const handleClick = async () => {
         navigate(`/movie/${imdbID}`);
     };
+
     return (
-        <div
-            className="movie-card"
-            id="movie-card"
-            style={{ position: 'relative' }}
-        >
+        <div className="movie-card" id="movie-card" style={{ position: 'relative' }}>
             <img
                 className="movie-img"
                 id="movie-img"
-                src={Poster !== 'N/A' ? Poster : defaultImage}
+                src={Poster}
                 alt={Title}
             />
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                }}
-            >
+            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                 <p className="see-more" id="see-more" onClick={handleClick}>
                     See more
                 </p>
-                <p
-                    className="see-more"
-                    id="see-more"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        toggleFavorite(imdbID);
-                    }}
-                >
-                    {isFav ? 'Remove Favorite' : 'Add Favorite'}
+                <p className="favorite-icon" onClick={(e) => {
+                    e.preventDefault();
+                    toggleFavorite(imdbID);
+                }}>
+                    <img className="heart-icon" src={isFav ? heartSolid : heartEmpty} alt={isFav ? "Remove from favorites" : "Add to favorites"} />
                 </p>
             </div>
         </div>

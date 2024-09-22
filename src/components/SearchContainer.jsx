@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import MovieCard from './MovieCard';
 import { useFetch } from '../hooks/useFetch';
 
@@ -13,7 +13,7 @@ const MovieSearchContainer = (props) => {
     const apiKey = import.meta.env.VITE_API_KEY;
 
     const [isLoading, error, getJson] = useFetch(
-        `${apiUrl}?apikey=${apiKey}&s=${searchTerm}&y=${selectedYear ? selectedYear : currentYear}`,
+        `${apiUrl}?apikey=${apiKey}&s=${searchTerm}${selectedYear ? `&y=${selectedYear}` : ''}`,
         setMovies
     );
 
@@ -50,11 +50,14 @@ const MovieSearchContainer = (props) => {
                     Search
                 </button>
             </div>
-            <div className="results">
-                {movies &&
+            <div className="results" style={{ color: 'white' }}>
+                {movies && movies.length > 0 ? (
                     movies.map((movie) => {
                         return <MovieCard key={movie.imdbID} movie={movie} />;
-                    })}
+                    })
+                ) : (
+                    <p>No movies found</p>
+                )}
             </div>
         </div>
     );

@@ -22,6 +22,20 @@ header p {
   align-self: center;
 }
 
+header p>span {
+  color: #f8c327;
+  background-color: #000000;
+  margin-right: 5px;
+  padding: 0.4rem 1rem;
+}
+
+header p>a {
+  text-decoration: none;
+  background-color: #000000;
+  color: #f8c327;
+  padding: 0.4rem 1rem;
+}
+
 #container {
   background-color: black;
   min-height: 650px;
