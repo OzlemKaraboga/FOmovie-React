@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header className="header">
+        <header>
             <Link to={'/'}>
                 <img src={logo} alt="logo" />
             </Link>
-            <p>Discover Movies on FOmovie</p>
+            <p>Discover... Watch... Enjoy...</p>
 
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', width: '20%' }}>
+            <div className="header-links">
                 <Link to={'/favorites'}>
                     Favorites
                 </Link>

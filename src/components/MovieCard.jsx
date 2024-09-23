@@ -20,15 +20,14 @@ const MovieCard = ({ movie }) => {
     };
 
     return (
-        <div className="movie-card" id="movie-card" style={{ position: 'relative' }}>
+        <div className="movie-card">
             <img
                 className="movie-img"
-                id="movie-img"
                 src={Poster}
                 alt={Title}
             />
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                <p className="see-more" id="see-more" onClick={handleClick}>
+                <p className="see-more" onClick={handleClick}>
                     See more
                 </p>
                 <p className="favorite-icon" onClick={(e) => {

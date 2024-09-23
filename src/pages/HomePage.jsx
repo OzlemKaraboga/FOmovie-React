@@ -20,7 +20,6 @@ const defaultCategories = [
     'mystery',
     'science',
     'teen',
-    'tv movie',
     'war',
     'western',
 ];
