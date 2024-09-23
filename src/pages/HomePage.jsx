@@ -10,20 +10,16 @@ const defaultCategories = [
     'action',
     'adventure',
     'animation',
-    'superhero',
     'crime',
     'documentary',
     'drama',
     'family',
     'history',
     'horror',
-    'musical',
+    'music',
     'mystery',
     'science',
-    'supernatural',
     'teen',
-    'biographical',
-    'environmental',
     'tv movie',
     'war',
     'western',
@@ -47,7 +43,9 @@ export const HomePage = () => {
     return (
         <>
             <Header />
-            <MovieSearchContainer movies={movies.Search} setMovies={setMovies} />
+            {isDataLoading ? (<p>Loading...</p>) :
+                error ? (<p>There is an error</p>) :
+                    (<MovieSearchContainer movies={movies.Search} setMovies={setMovies} />)}
             <Footer />
         </>
     );
