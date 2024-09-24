@@ -10,7 +10,7 @@
 
 FOmovie is a movie search website built using React. Users can search for movies based on their titles, filter movies by years, and select their favorite films. The platform offers a seamless experience for users to explore and discover movies of interest. Explore, filter, and save your favorite movies with ease on FOmovie.
 
-[Click here for the Demo version](https://transcendent-daffodil-94ac9c.netlify.app/)
+[Click here for the Demo version](https://fomovieapp.netlify.app/)
 
 ### Technologies
 
