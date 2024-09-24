@@ -38,7 +38,6 @@ function Favorites() {
                 setError(error);
             });
     }, [favorites]);
-    console.log(movies);
     if (error) {
         return 'Something went wrong finding the movie. Please try again!';
     } else if (isLoading) {
