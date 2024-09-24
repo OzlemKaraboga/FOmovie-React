@@ -1,8 +1,40 @@
-# React + Vite
+# FOmovie-REACT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Homepage](src/assets/image1.png)
 
-Currently, two official plugins are available:
+![Detail page](src/assets/image2.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Favorites](src/assets/image3.png)
+
+## Project Overview
+
+FOmovie is a movie search website built using React. Users can search for movies based on their titles, filter movies by years, and select their favorite films. The platform offers a seamless experience for users to explore and discover movies of interest. Explore, filter, and save your favorite movies with ease on FOmovie.
+
+[Click here for the Demo version](https://transcendent-daffodil-94ac9c.netlify.app/)
+
+### Technologies
+
+- REACT
+- CONTEXT API
+- React Router
+
+### Project Setup
+
+To get started you can simply clone the repo and install the dependencies in the root folder
+
+| Steps   |with [NPM](https://www.npmjs.com/) |
+| ------- | --------------------------------- |
+| Install |`npm install`                      |
+| Run     |`npm run dev`                      |
+
+### Installation
+
+ Clone the repository :
+
+```
+git clone <https://github.com/OzlemKaraboga/FOmovie-React.git>
+```
+
+## Used API
+
+The application utilizes the [OMDb API](https://www.omdbapi.com) for fetching movie information.
