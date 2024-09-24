@@ -2,7 +2,6 @@ import { useState } from 'react';
 import MovieCard from './MovieCard';
 import { useFetch } from '../hooks/useFetch';
 
-// React Container Component for Movie Search Page
 const MovieSearchContainer = (props) => {
     const { movies, setMovies } = props;
     const [searchTerm, setSearchTerm] = useState('');
