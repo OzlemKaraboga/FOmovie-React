@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useFetch } from '../hooks/useFetch';
-import defaultImage from '../assets/default-card-image.png';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -9,6 +8,7 @@ import Footer from '../components/Footer';
 export const Detail = () => {
     const apiUrl = import.meta.env.VITE_API_URL;
     const apiKey = import.meta.env.VITE_API_KEY;
+
     const { imdbID } = useParams();
     const navigate = useNavigate();
 
@@ -39,11 +39,7 @@ export const Detail = () => {
                         <h1>{movieInfo && movieInfo.Title}</h1>
                         <div className='movie-container'>
                             <img className='movie-info-img'
-                                src={
-                                    movieInfo && movieInfo.Poster !== 'N/A'
-                                        ? movieInfo.Poster
-                                        : defaultImage
-                                }
+                                src={movieInfo && movieInfo.Poster}
                                 alt={movieInfo && movieInfo.Title}
 
                             />

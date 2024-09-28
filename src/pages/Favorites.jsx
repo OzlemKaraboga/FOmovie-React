@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 
-import MovieSearchContainer from '../components/SearchContainer';
+import MovieSearchContainer from '../components/MovieSearchContainer';
 import FavoriteContext from '../context/FavoritesContext';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 function Favorites() {
     const apiUrl = import.meta.env.VITE_API_URL;
     const apiKey = import.meta.env.VITE_API_KEY;
+
     const { favorites } = useContext(FavoriteContext);
 
     const [movies, setMovies] = useState([]);
@@ -38,6 +39,7 @@ function Favorites() {
                 setError(error);
             });
     }, [favorites]);
+
     if (error) {
         return 'Something went wrong finding the movie. Please try again!';
     } else if (isLoading) {

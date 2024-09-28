@@ -139,6 +139,7 @@ header p {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+  color: white;
   padding: 3rem;
   position: relative;
 }

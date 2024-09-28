@@ -28,16 +28,15 @@ const MovieSearchContainer = (props) => {
     }
 
     return (
-        <div className="container" id="container">
-            <div className="search-bar" id="search-bar">
+        <div id="container">
+            <div className="search-bar">
                 <input
-                    className="search-input"
                     id="search-input"
                     type="text"
                     placeholder="Search with title"
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
-                <select className="selectYear" id="selectYear" onChange={(e) => setSelectedYear(e.target.value)}>
+                <select id="selectYear" onChange={(e) => setSelectedYear(e.target.value)}>
                     <option value="">Select Year</option>
                     {years.map((year) => (
                         <option key={year} value={year}>
@@ -45,11 +44,11 @@ const MovieSearchContainer = (props) => {
                         </option>
                     ))}
                 </select>
-                <button className="search-button" id="search-button" onClick={handleSearch}>
+                <button id="search-button" onClick={handleSearch}>
                     Search
                 </button>
             </div>
-            <div className="results" style={{ color: 'white' }}>
+            <div className="results">
                 {movies && movies.length > 0 ? (
                     movies.map((movie) => {
                         return <MovieCard key={movie.imdbID} movie={movie} />;
